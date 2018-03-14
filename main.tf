@@ -1,3 +1,11 @@
+terraform {
+  backend "s3" {
+    bucket  = "dpf-terraform-state"
+    region  = "eu-west-2"
+    key     = "terraform.tfstate"
+    encrypt = true
+  }
+}
 provider "aws" {
   region = "eu-west-2"
 }
